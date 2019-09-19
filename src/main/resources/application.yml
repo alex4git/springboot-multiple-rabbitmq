@@ -1,0 +1,18 @@
+server:
+  port: 7070
+  
+spring:  rabbitmq:
+    first: 
+      host: 10.14.32.246
+      port: 30002
+      username: cleanx
+      password: CleanX123654
+      virtual-host: vhost_cleanx
+    second: 
+      host: 10.14.32.246 
+      port: 30002
+      username: cleanx_ws_consumer
+      password: cleanx123#654
+      virtual-host: vhost_cleanx
+    
+
