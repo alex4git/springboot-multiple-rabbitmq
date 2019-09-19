@@ -33,7 +33,7 @@ public class MQFirstConfig extends AbstractMQConfig{
     @Bean(name = "firstMQTemplate")
     @Primary
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)  //必须是prototype类型，消息confirmcallback时才正确
-    public AmqpTemplate mqTemplate(@Qualifier("firstConnectionFactory") ConnectionFactory connectionFactory) {
+    public RabbitTemplate mqTemplate(@Qualifier("firstConnectionFactory") ConnectionFactory connectionFactory) {
     	RabbitTemplate template = new RabbitTemplate(connectionFactory);
         template.setMessageConverter(new Jackson2JsonMessageConverter());// 发送端类型转化pojo,需要序列化
         return template;
@@ -51,7 +51,7 @@ public class MQFirstConfig extends AbstractMQConfig{
     }
     
     @Bean(value = "firstRabbitAdmin")
-    public AmqpAdmin firstRabbitAdmin(@Qualifier("firstConnectionFactory") ConnectionFactory connectionFactory) {
+    public RabbitAdmin firstRabbitAdmin(@Qualifier("firstConnectionFactory") ConnectionFactory connectionFactory) {
         return new RabbitAdmin(connectionFactory);
     }
     

@@ -9,11 +9,6 @@ package com.rabbitmq.demo.config;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //
-///**
-// * @author :zoboy
-// * @Description:
-// * @ Date: Created in 2018-10-25 09:43
-// */
 //@Configuration
 //public class ProducerConfig {
 //
